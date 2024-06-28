@@ -3,14 +3,14 @@
 
 
 // Variables (font sizes, box-shadow, borders, spacing)
-@import "AEstetikSS/vars";
+@import "scss/vars";
 
 // Reset browser defaut styles
-@import "AEstetikSS/reset";
+@import "scss/reset";
 
 // Layout
-@import "AEstetikSS/breakpoints";
+@import "scss/breakpoints";
 
 // Functions & utilities
-@import "AEstetikSS/functions";
-@import "AEstetikSS/utilities";
+@import "scss/functions";
+@import "scss/utilities";

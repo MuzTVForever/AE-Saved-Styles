@@ -1,6 +1,6 @@
 {
   "name": "@nvrbts/aestetik-saved-styles",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "nvrbts saved styles and utils for future projects. Part of this code from ÆstetikWeb. All made by nvrbts",
   "main": "AEstetikSS.scss",
   "repository": {

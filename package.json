@@ -1,0 +1,25 @@
+{
+  "name": "@nvrbts/aestetik-saved-styles",
+  "version": "1.0.0",
+  "description": "nvrbts saved styles for future projects. Part of this code from ÆstetikWeb. All made by nvrbts",
+  "main": "index.scss",
+  "scripts": {
+    "build": "sass index.scss dist/index.css --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuzTVForever/AEstetik-Saved-Styles.git"
+  },
+  "keywords": [
+    "ÆstetikWeb"
+  ],
+  "author": "nvrbts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuzTVForever/AEstetik-Saved-Styles/issues"
+  },
+  "homepage": "https://github.com/MuzTVForever/AEstetik-Saved-Styles#readme",
+  "devDependencies": {
+    "sass": "^1.77.6"
+  }
+}

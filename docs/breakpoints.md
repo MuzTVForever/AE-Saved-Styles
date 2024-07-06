@@ -7,7 +7,7 @@
 <i>breakpoint-between(point, point) - for @media (min-width: px) and (max-width: px)</i> 
 
 <b>Available breakpoints</b><br>
-~~~scss  
+~~~txt  
 Breakpoint    | Class infix | Dimensions
 Small         |     sm      | 480px
 Medium        |     md      | 720px

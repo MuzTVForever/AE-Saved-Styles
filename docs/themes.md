@@ -1,7 +1,7 @@
 
 # How to create own themes
 
-U can create your own themes, using this packege. 
+U can create your own themes, using this package. 
 
 1. Add to html tag attribute data-theme with name one of your theme.
 

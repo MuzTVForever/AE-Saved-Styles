@@ -3,14 +3,14 @@
 
 
 // Variables (font sizes, box-shadow, borders, spacing)
-@import "scss/vars";
+@import "src/scss/vars";
 
 // Reset browser defaut styles
-@import "scss/reset";
+@import "src/scss/reset";
 
 // Layout
-@import "scss/breakpoints";
+@import "src/scss/breakpoints";
 
 // Functions & utilities
-@import "scss/functions";
-@import "scss/utilities";
+@import "src/scss/functions";
+@import "src/scss/utilities";

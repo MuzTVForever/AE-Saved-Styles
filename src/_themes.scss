@@ -1,0 +1,42 @@
+// Usage
+// 1. Set to html tag data attribut data-theme="<name of your theme>"
+// 
+// 2. Create a scss file for themes and write this:
+// $themes: (
+//   "theme-1": (
+//     bg-color: white,
+//     text-color: #0077ff,
+//   ),
+//   "theme-2": (
+//     bg-color: #1f1f1f,
+//     text-color: #0077ff,
+//   ),
+// );
+// 
+// 3. In scss file write this:
+// @include themify($themes) {
+//     background-color: themed('bg-color');
+//     color: themed('text-color');
+// }
+// 
+
+@mixin themify($themes) {
+    @each $theme, $map in $themes {
+        [data-theme=#{quote($theme)}] & {
+            $theme-map: (
+                ) !global;
+
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}

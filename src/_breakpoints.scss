@@ -1,0 +1,79 @@
+// Usage
+// @include breakpoint(md) {
+//     elem {
+//         color: green;
+//     }
+// }
+
+$breakpoints: (
+    xs: 0,
+    sm: 480px,
+    md: 720px,
+    lg: 960px,
+    xl: 1200px,
+);
+
+@function breakpoint-min($name, $breakpoints: $breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min !=0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $breakpoints) {
+    $max: map-get($breakpoints, $name);
+    @return if($max and $max > 0, $max - .02, null);
+}
+
+
+// @media only screen and (max-width: px) {}
+@mixin breakpoint-max($name, $breakpoints: $breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+
+    @if $max {
+        @media only screen and (max-width: $max) {
+            @content;
+        }
+    }
+
+    @else {
+        @content;
+    }
+}
+
+// @media only screen and (min-width: px) {}
+@mixin breakpoint-min($name, $breakpoints: $breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+
+    @if $min {
+        @media only screen and (min-width: $min) {
+            @content;
+        }
+    }
+
+    @else {
+        @content;
+    }
+}
+
+// @media only screen and (min-width: px) and (max-width: px) {}
+@mixin breakpoint-between($point-lower, $point-upper, $breakpoints: $breakpoints) {
+    $min: breakpoint-min($point-lower, $breakpoints);
+    $max: breakpoint-max($point-upper, $breakpoints);
+
+    @if $min !=null and $max !=null {
+        @media only screen and (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    }
+
+    @else if $max ==null {
+        @include media-breakpoint-up($point-lower, $breakpoints) {
+            @content;
+        }
+    }
+
+    @else if $min ==null {
+        @include media-breakpoint-down($point-upper, $breakpoints) {
+            @content;
+        }
+    }
+}

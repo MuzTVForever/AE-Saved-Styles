@@ -1,65 +1,28 @@
+![ÆWebKit](./repo-images/logo.png)  
+<h1>ÆWebKit</h1>
 
-# Æstetik Saved Styles  
 My default styles and utils for future projects. Part of this code from ÆstetikWeb.
 
 ## How to get this package
 
-Install this package using npm or via other manager 
+1. Install this package using npm or via other manager 
 
 ~~~bash  
-  npm i @nvrbts/aestetik-saved-styles
+  npm i ae-webkit
 ~~~
 or
 ~~~bash  
-  bun add @nvrbts/aestetik-saved-styles
+  bun add ae-webkit
 ~~~
 
-## Usage/Examples  
-<b>Import into scss file</b>
+2. Import into scss file
 ~~~scss  
   // my-project/index.scss
-  @import "@nvrbts/aestetik-saved-styles";
+  @import "ae-webkit";
 ~~~  
 
-<b>How to create own themes</b>
-~~~html  
-  // in html file
-  <html data-theme='theme-1'>
-~~~  
-~~~scss  
-  // in scss file
-  @import "@nvrbts/aestetik-saved-styles";
 
-  $themes: (
-    "theme-1": (
-      bg-color: white,
-      text-color: black,
-    ),
-    "theme-2": (
-      bg-color: black,
-      text-color: white,
-    ),
-  );
 
-  @include themify($themes) {
-      background-color: themed('bg-color');
-      color: themed('text-color');
-  }
-~~~  
-
-<b>How to use breakpoints</b>
-
-<i>breakpoint-min; breakpoint-max; breakpoint-between;</i> 
-~~~scss  
-  // in scss file
-  @import "@nvrbts/aestetik-saved-styles";
-
-  .element {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-
-      @include breakpoint-max(md) {               -->    @media only screen and (max-width: 720px) {
-          grid-template-columns: repeat(1, 1fr);  -->        grid-template-columns: repeat(1, 1fr);    
-      }                                           -->    }
-  }
-~~~  
+## Docs  
+1. [Themes | How to create own themes](./docs/themes.md)  
+2. [Breakpoints | How to use breakpoints](./docs/breakpoints.md)    

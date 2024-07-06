@@ -1,22 +1,41 @@
 {
-  "name": "@nvrbts/aestetik-saved-styles",
-  "version": "1.0.4",
-  "description": "nvrbts saved styles and utils for future projects. Part of this code from ÆstetikWeb. All made by nvrbts",
-  "main": "AEstetikSS.scss",
+  "name": "ae-webkit",
+  "version": "0.1.1",
+  "author": "nvrbts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MuzTVForever/AEstetik-Saved-Styles.git"
+    "url": "git+https://github.com/MuzTVForever/AEWebKit.git"
   },
-  "keywords": [
-    "ÆstetikWeb"
-  ],
-  "author": "nvrbts",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MuzTVForever/AEstetik-Saved-Styles/issues"
+  "config": {
+    "version_short": "0.1"
   },
-  "homepage": "https://github.com/MuzTVForever/AEstetik-Saved-Styles#readme",
+  "main": "js/ae-webkit.js",
+  "sass": "scss/ae-webkit.scss",
+  "style": "css/ae-webkit.css",
   "devDependencies": {
+    "clean-css-cli": "^5.6.3",
     "sass": "^1.77.6"
+  },
+  "bugs": {
+    "url": "https://github.com/MuzTVForever/AEWebKit/issues"
+  },
+  "description": "ÆWeb - Useful styles, utilities and scripts for webdev. Everything made with love by nvrbts",
+  "homepage": "https://github.com/MuzTVForever/AEWebKit#readme",
+  "keywords": [
+    "ÆWebKit",
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "license": "MIT",
+  
+  "scripts": {
+    "css": "bun run css-compile && bun run css-compile-min",
+    "css-compile": "sass --style expanded --source-map --no-error-css scss/:css/",
+    "css-compile-min": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output css/ --batch --batch-suffix \".min\" \"css/*.css\" \"!css/*.min.css\""
   }
 }

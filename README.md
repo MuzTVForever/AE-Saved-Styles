@@ -1,6 +1,6 @@
 
 # Æstetik Saved Styles  
-My default styles and utils for future projects. Part of this code from [ÆstetikWeb](./src/_vars.scss).
+My default styles and utils for future projects. Part of this code from ÆstetikWeb.
 
 ## How to get this package
 
